@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Read-only Discord & Spotify Integration</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <div class="d-flex flex-column gap-2 mb-5 mt-5 mx-auto w-50">
+        <h1 class="h2 mb-3 text-center">Read-only Discord & Spotify Integration</h1>
+        <p>Spotify integration in Discord is known to pause playback if you continue speaking in voice chat for more than 30 seconds to prevent music piracy.</p>
+        <p>This tool is designed to circumvent the playback restriction by simply removing the <code>user-modify-playback-state</code> scope from the list of requested scopes when authorizing the connection between Spotify & Discord. Follow the steps below to set up a read-only connection to Spotify from Discord.</p>
+
+        <p class="lead">Step 1 - Disconnect Spotify from Discord</p>
+        <p>Open Discord, then go to your "User Settings" (the small gear icon next to your name). Next, click on "Connections" in the sidebar, then click the &times; symbol next to "Spotify" to disconnect it. (You may skip this step if Spotify is not currently linked to your Discord account.)</p>
+
+        <p class="lead">Step 2 - Remove Discord from your Spotify Account</p>
+        <p>Open the list of <a href="https://www.spotify.com/us/account/apps/">Approved applications</a> for your Spotify account. Click "Remove Access" next to "Discord" to reset the approved scopes. (You may skip this step if the Discord app is not already approved for your Spotify account.)</p>
+
+        <p class="lead">Step 3 - Reconnect Spotify to Discord</p>
+        <p>In Discord's "Connection" settings, click the Spotify logo, but <strong>do not</strong> approve the connection. Instead, copy the URL of the authorization page, then paste it below and click "Authorize." A new authorization page should open for the read-only connection.</p>
+
+        <div id="message"></div>
+        <div class="text-center">
+          <input type="text" id="url" />
+          <input type="button" id="submit" value="Authorize" />
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="lib/index.js"></script>
+  </body>
+</html>
